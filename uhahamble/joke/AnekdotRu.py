@@ -18,8 +18,7 @@ class AnekdotRu(JokeWebsiteBase):
     NAME = "anekdot.ru"
     URL = "https://www.anekdot.ru/"
 
-    @staticmethod
-    def get_jokes() -> List[str]:
+    def get_jokes(self) -> List[str]:
         results: List[str] = []
 
         page = requests.get("https://www.anekdot.ru", headers={"User-Agent": ua.random})
@@ -32,6 +31,6 @@ class AnekdotRu(JokeWebsiteBase):
             if "читать дальше" in anec:
                 continue
 
-            results.append(anec)
+            results.append(self.mark_joke(anec))
 
         return results

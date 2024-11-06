@@ -1,12 +1,12 @@
-from abc import ABCMeta, abstractmethod
 from typing import List
 
 
-class JokeWebsiteBase(metaclass=ABCMeta):
+class JokeWebsiteBase:
     NAME: str
     URL: str
 
-    @staticmethod
-    @abstractmethod
-    def get_jokes() -> List[str]:
+    def mark_joke(self, joke: str) -> str:
+        return joke + f"\n\nИсточник: [{self.NAME}]({self.URL})"
+
+    def get_jokes(self) -> List[str]:
         return []

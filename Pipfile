@@ -1,0 +1,22 @@
+[[source]]
+url = "https://pypi.org/simple"
+verify_ssl = true
+name = "pypi"
+
+[packages]
+python-dotenv = "*"
+pytelegrambotapi = "*"
+flask = "*"
+waitress = "*"
+
+[dev-packages]
+types-waitress = "*"
+mypy = "*"
+black = "*"
+isort = "*"
+flake8 = "*"
+watchdog = "*"
+psutil = "*"
+
+[requires]
+python_version = "3.12"

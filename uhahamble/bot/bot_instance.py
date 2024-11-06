@@ -3,7 +3,7 @@ from logging import getLogger
 
 import telebot
 
-from bot.config import BOT_TOKEN
+from .config import BOT_TOKEN
 
 logger = getLogger()
 

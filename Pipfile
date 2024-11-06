@@ -8,6 +8,9 @@ python-dotenv = "*"
 pytelegrambotapi = "*"
 flask = "*"
 waitress = "*"
+requests = "*"
+fake-useragent = "*"
+beautifulsoup4 = "*"
 
 [dev-packages]
 types-waitress = "*"
@@ -17,6 +20,8 @@ isort = "*"
 flake8 = "*"
 watchdog = "*"
 psutil = "*"
+types-beautifulsoup4 = "*"
+types-requests = "*"
 
 [requires]
 python_version = "3.12"

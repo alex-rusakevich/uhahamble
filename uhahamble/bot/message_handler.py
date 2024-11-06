@@ -1,4 +1,6 @@
-from bot.bot_instance import bot_instance as bot
+from uhahamble.joke import get_joke
+
+from .bot_instance import bot_instance as bot
 
 
 @bot.message_handler(commands=["start"])
@@ -8,4 +10,4 @@ def send_welcome(message):
 
 @bot.message_handler(commands=["joke"])
 def send_joke(message):
-    bot.reply_to(message, "Ржака)")
+    bot.reply_to(message, get_joke())

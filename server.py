@@ -8,8 +8,8 @@ from logging import getLogger
 
 from waitress import serve
 
-from bot.bot_instance import bot_instance as bot
-from bot.config import DEBUG
+from uhahamble.bot.bot_instance import bot_instance as bot
+from uhahamble.bot.config import DEBUG
 
 logger = getLogger(__name__)
 
@@ -21,7 +21,7 @@ def main():
     command = sys.argv[1]
 
     if command == "prod":
-        from bot.wsgi import wsgi_app
+        from uhahamble.bot.wsgi import wsgi_app
 
         waitress_args = {"port": os.environ.get("PORT", 8080)}
         serve(wsgi_app, **waitress_args)
@@ -35,7 +35,7 @@ def main():
         logger.info("Running in polling mode...")
         bot.infinity_polling(
             restart_on_change=DEBUG,
-            path_to_watch=os.path.join(".", "bot"),
+            path_to_watch=os.path.join(".", "uhahamble"),
         )
 
         logger.info("The bot has stopped.")

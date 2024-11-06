@@ -12,7 +12,7 @@ DEBUG: bool = bool(os.environ.get("DEBUG", True))
 
 BOT_TOKEN = os.environ["BOT_TOKEN"]
 
-PROGRAM_DIR = os.path.abspath(os.path.join(os.path.dirname(__file__), ".."))
+PROGRAM_DIR = os.path.abspath(os.path.join(os.path.dirname(__file__), "..", ".."))
 
 LOG_LVL = "DEBUG" if DEBUG else "INFO"
 LOG_DIR = Path(PROGRAM_DIR, "logs")

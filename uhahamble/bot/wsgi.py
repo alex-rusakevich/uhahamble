@@ -6,8 +6,8 @@ import flask
 import telebot
 from flask import Flask, redirect, request
 
-from bot.bot_instance import bot_instance as bot
-from bot.config import BOT_TOKEN, DEBUG
+from .bot_instance import bot_instance as bot
+from .config import BOT_TOKEN, DEBUG
 
 logger = getLogger()
 

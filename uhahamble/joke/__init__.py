@@ -1,8 +1,10 @@
 import random
+from concurrent.futures import ThreadPoolExecutor
 from itertools import chain
 from logging import getLogger
 from typing import List
 
+from uhahamble.bot.config import THREADS_COUNT
 from uhahamble.utils.cache import cached
 
 from .AnekdotRu import AnekdotRu
@@ -17,7 +19,14 @@ JOKE_WEBSITES: List[JokeWebsiteBase] = [AnekdotRu(), AnekdotyRu(), NewanekiRu()]
 
 @cached()
 def get_joke_list() -> List[str]:
-    jokes = [joke_website.get_jokes() for joke_website in JOKE_WEBSITES]
+    executor = ThreadPoolExecutor(max_workers=THREADS_COUNT)
+
+    jokes = []
+
+    for result in executor.map(
+        lambda joke_website: joke_website.get_jokes(), JOKE_WEBSITES
+    ):
+        jokes.append(result)
 
     return list(chain(*jokes))
 

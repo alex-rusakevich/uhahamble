@@ -1,5 +1,6 @@
 import logging
 import logging.config
+import multiprocessing
 import os
 import sys
 from pathlib import Path
@@ -59,3 +60,5 @@ NO_CACHE: bool = bool(os.environ.get("NO_CACHE", False))
 redis = StrictRedis()
 
 logger.info(f"Cache disabled: {NO_CACHE}")
+
+THREADS_COUNT = multiprocessing.cpu_count()

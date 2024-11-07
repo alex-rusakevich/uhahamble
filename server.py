@@ -14,7 +14,7 @@ from uhahamble.bot.config import DEBUG
 logger = getLogger(__name__)
 
 
-def main():
+def main() -> None:
     if len(sys.argv) == 1:
         raise Exception("Not enough arguments to run, stopping")
 
@@ -24,7 +24,7 @@ def main():
         from uhahamble.bot.wsgi import wsgi_app
 
         waitress_args = {"port": os.environ.get("PORT", 8080)}
-        serve(wsgi_app, **waitress_args)
+        serve(wsgi_app, kw=waitress_args)
     elif command == "dev":
         signal.signal(signal.SIGINT, signal.SIG_DFL)  # Exit on Ctrl-C
 

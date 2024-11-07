@@ -11,16 +11,16 @@ waitress = "*"
 requests = "*"
 fake-useragent = "*"
 beautifulsoup4 = "*"
+redis = "*"
 
 [dev-packages]
 types-waitress = "*"
 mypy = "*"
-black = "*"
-isort = "*"
-flake8 = "*"
+ruff = "*"
 watchdog = "*"
 psutil = "*"
 types-beautifulsoup4 = "*"
+types-redis = "*"
 types-requests = "*"
 
 [requires]

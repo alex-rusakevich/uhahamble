@@ -5,6 +5,7 @@ import sys
 from pathlib import Path
 
 from dotenv import load_dotenv
+from redis import StrictRedis
 
 load_dotenv()
 
@@ -50,3 +51,6 @@ LOGGING = {
 }
 
 logging.config.dictConfig(LOGGING)
+
+REDIS_PREFIX = os.environ.get("REDIS_PREFIX")
+redis = StrictRedis()

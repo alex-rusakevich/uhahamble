@@ -52,5 +52,10 @@ LOGGING = {
 
 logging.config.dictConfig(LOGGING)
 
+logger = logging.getLogger(__name__)
+
 REDIS_PREFIX = os.environ.get("REDIS_PREFIX")
+NO_CACHE: bool = bool(os.environ.get("NO_CACHE", False))
 redis = StrictRedis()
+
+logger.info(f"Cache disabled: {NO_CACHE}")

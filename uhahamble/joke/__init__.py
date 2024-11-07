@@ -6,11 +6,12 @@ from typing import List
 from uhahamble.utils.cache import cached
 
 from .AnekdotRu import AnekdotRu
+from .AnekdotyRu import AnekdotyRu
 from .JokeWebsiteBase import JokeWebsiteBase
 
 logger = getLogger(__name__)
 
-JOKE_WEBSITES: List[JokeWebsiteBase] = [AnekdotRu()]
+JOKE_WEBSITES: List[JokeWebsiteBase] = [AnekdotRu(), AnekdotyRu()]
 
 
 @cached()

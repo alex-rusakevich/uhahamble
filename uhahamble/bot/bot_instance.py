@@ -13,4 +13,5 @@ bot_instance = telebot.TeleBot(
     parse_mode="MARKDOWN",
     threaded=True,
     num_threads=multiprocessing.cpu_count(),
+    disable_web_page_preview=True,
 )

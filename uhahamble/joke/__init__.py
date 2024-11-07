@@ -8,10 +8,11 @@ from uhahamble.utils.cache import cached
 from .AnekdotRu import AnekdotRu
 from .AnekdotyRu import AnekdotyRu
 from .JokeWebsiteBase import JokeWebsiteBase
+from .NewanekiRu import NewanekiRu
 
 logger = getLogger(__name__)
 
-JOKE_WEBSITES: List[JokeWebsiteBase] = [AnekdotRu(), AnekdotyRu()]
+JOKE_WEBSITES: List[JokeWebsiteBase] = [AnekdotRu(), AnekdotyRu(), NewanekiRu()]
 
 
 @cached()

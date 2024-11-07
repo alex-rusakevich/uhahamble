@@ -8,7 +8,7 @@ from uhahamble.bot.config import NO_CACHE, REDIS_PREFIX, redis
 logger = getLogger(__name__)
 
 
-def cached(function: Optional[Callable] = None, ttl_sec: int = 500):
+def cached(function: Optional[Callable] = None, ttl_sec: float = 500):
     assert callable(function) or function is None
 
     def _decorator(func):
@@ -25,7 +25,7 @@ def cached(function: Optional[Callable] = None, ttl_sec: int = 500):
 
                 value = func(*args, **kwargs)
                 value_pickled = pickle.dumps(value)
-                redis.set(key, value_pickled)
+                redis.set(key, value_pickled, ex=ttl_sec)
             else:
                 # Skip the function entirely and use the cached value instead.
                 logger.debug(f"Cache hit for '{key}'")

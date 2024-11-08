@@ -53,11 +53,7 @@ def clear_cache(c):
 @task
 def restart(c):
     c.run("touch tmp/restart.txt")
-
-    for _ in range(3):
-        print("Waiting...")
-        time.sleep(1)
-
+    c.run("sleep 3")
     c.run(f"curl {OUTER_URL} 2>&1")
 
 

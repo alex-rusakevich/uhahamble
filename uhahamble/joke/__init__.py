@@ -28,7 +28,10 @@ def get_joke_list() -> List[str]:
     ):
         jokes.append(result)
 
-    return list(chain(*jokes))
+    jokes = list(chain(*jokes))
+    random.shuffle(jokes)
+
+    return jokes
 
 
 def get_joke() -> str:

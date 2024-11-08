@@ -23,7 +23,7 @@ JOKE_WEBSITES: List[JokeWebsiteBase] = [
 ]
 
 
-@cached()
+@cached(ttl_sec=60 * 60 * 1)  # One hour
 def get_joke_list() -> List[str]:
     executor = ThreadPoolExecutor(max_workers=THREADS_COUNT)
 

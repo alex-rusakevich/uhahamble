@@ -23,7 +23,7 @@ LOG_DIR.mkdir(parents=True, exist_ok=True)
 
 LOGGING = {
     "version": 1,
-    "disable_existing_loggers": False,
+    "disable_existing_loggers": True,
     "formatters": {
         "standard": {"format": "%(asctime)s [%(levelname)s] %(name)s: %(message)s"},
     },
@@ -47,7 +47,7 @@ LOGGING = {
             "handlers": ["default", "console"],
             "level": LOG_LVL,
             "propagate": True,
-        },
+        }
     },
 }
 
@@ -59,6 +59,6 @@ REDIS_PREFIX = os.environ.get("REDIS_PREFIX")
 NO_CACHE: bool = bool(os.environ.get("NO_CACHE", False))
 redis = StrictRedis()
 
-logger.info(f"Cache disabled: {NO_CACHE}")
+logger.info(f"Caching disabled: {NO_CACHE}")
 
 THREADS_COUNT = multiprocessing.cpu_count()

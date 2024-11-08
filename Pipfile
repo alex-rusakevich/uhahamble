@@ -12,6 +12,7 @@ requests = "*"
 fake-useragent = "*"
 beautifulsoup4 = "*"
 redis = "*"
+invoke = "*"
 
 [dev-packages]
 types-waitress = "*"

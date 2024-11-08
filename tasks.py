@@ -12,10 +12,13 @@ from uhahamble.bot.config import DEBUG, OUTER_URL, REDIS_PREFIX
 
 logger = getLogger(__name__)
 
+getLogger("invoke").disabled = True
+
 
 @task
 def dev(c):
     signal.signal(signal.SIGINT, signal.SIG_DFL)  # Exit on Ctrl-C
+    getLogger("watchdog.observers.inotify_buffer").disabled = True
 
     logger.info("Starting the bot...")
     bot.remove_webhook()

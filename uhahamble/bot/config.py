@@ -62,3 +62,5 @@ redis = StrictRedis()
 logger.info(f"Caching disabled: {NO_CACHE}")
 
 THREADS_COUNT = multiprocessing.cpu_count()
+
+OUTER_URL = os.environ.get("OUTER_URL", "127.0.0.1")

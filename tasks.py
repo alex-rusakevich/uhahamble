@@ -8,7 +8,7 @@ from invoke import task
 from waitress import serve
 
 from uhahamble.bot.bot_instance import bot_instance as bot
-from uhahamble.bot.config import DEBUG, REDIS_PREFIX
+from uhahamble.bot.config import DEBUG, OUTER_URL, REDIS_PREFIX
 
 logger = getLogger(__name__)
 
@@ -53,3 +53,14 @@ def clear_cache(c):
 @task
 def restart(c):
     c.run("touch tmp/restart.txt")
+
+    for _ in range(3):
+        print("Waiting...")
+        time.sleep(1)
+
+    c.run(f"curl {OUTER_URL} 2>&1")
+
+
+@task
+def mypy(c):
+    c.run("mypy uhahamble", pty=True)

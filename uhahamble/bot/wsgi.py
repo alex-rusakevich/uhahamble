@@ -1,4 +1,3 @@
-import os
 import time
 from logging import getLogger
 
@@ -7,12 +6,12 @@ import telebot
 from flask import Flask, redirect, request
 
 from .bot_instance import bot_instance as bot
-from .config import BOT_TOKEN, DEBUG
+from .config import BOT_TOKEN, DEBUG, OUTER_URL
 
 logger = getLogger()
 
 
-WEBHOOK_URL_BASE = os.environ.get("OUTER_URL", "127.0.0.1")
+WEBHOOK_URL_BASE = OUTER_URL
 WEBHOOK_URL_PATH = "/{}/".format(BOT_TOKEN)
 
 

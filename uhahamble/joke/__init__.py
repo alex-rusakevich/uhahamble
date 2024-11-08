@@ -7,6 +7,7 @@ from typing import List
 from uhahamble.bot.config import THREADS_COUNT
 from uhahamble.utils.cache import cached
 
+from .AnekdotovNet import AnekdotovNet
 from .AnekdotRu import AnekdotRu
 from .AnekdotyRu import AnekdotyRu
 from .JokeWebsiteBase import JokeWebsiteBase
@@ -14,7 +15,12 @@ from .NewanekiRu import NewanekiRu
 
 logger = getLogger(__name__)
 
-JOKE_WEBSITES: List[JokeWebsiteBase] = [AnekdotRu(), AnekdotyRu(), NewanekiRu()]
+JOKE_WEBSITES: List[JokeWebsiteBase] = [
+    AnekdotRu(),
+    AnekdotyRu(),
+    NewanekiRu(),
+    AnekdotovNet(),
+]
 
 
 @cached()

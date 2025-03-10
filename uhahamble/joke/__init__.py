@@ -11,6 +11,7 @@ from .AnekdotovNet import AnekdotovNet
 from .AnekdotRu import AnekdotRu
 from .AnekdotyRu import AnekdotyRu
 from .JokeWebsiteBase import JokeWebsiteBase
+from .NekdoRu import NekdoRu
 from .NewanekiRu import NewanekiRu
 
 logger = getLogger(__name__)
@@ -20,6 +21,7 @@ JOKE_WEBSITES: List[JokeWebsiteBase] = [
     AnekdotyRu(),
     NewanekiRu(),
     AnekdotovNet(),
+    NekdoRu()
 ]
 
 

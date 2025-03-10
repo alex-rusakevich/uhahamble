@@ -1,0 +1,31 @@
+[tool.poetry]
+name = "uhahamble"
+version = "1.0.0"
+description = "Бот с отборными (или не очень) русскими анекдотами"
+authors = ["Alexander Rusakevich <mr.alexander.rusakevich@gmail.com>"]
+license = "GPLv3"
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.12"
+python-dotenv = "^1.0.1"
+pytelegrambotapi = "^4.26.0"
+flask = "^3.1.0"
+waitress = "^3.0.2"
+requests = "^2.32.3"
+fake-useragent = "^2.0.3"
+beautifulsoup4 = "^4.13.3"
+redis = "^5.2.1"
+invoke = "^2.2.0"
+
+
+[tool.poetry.group.dev.dependencies]
+types-waitress = "^3.0.1.20241117"
+mypy = "^1.15.0"
+ruff = "^0.9.10"
+watchdog = "^6.0.0"
+psutil = "^7.0.0"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"

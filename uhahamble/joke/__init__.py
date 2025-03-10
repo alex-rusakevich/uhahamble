@@ -9,6 +9,7 @@ from uhahamble.utils.cache import cached
 
 from .AnekdotovNet import AnekdotovNet
 from .AnekdotRu import AnekdotRu
+from .AnekdotovmirRu import AnekdotovmirRu
 from .AnekdotyRu import AnekdotyRu
 from .JokeWebsiteBase import JokeWebsiteBase
 from .NekdoRu import NekdoRu
@@ -21,7 +22,8 @@ JOKE_WEBSITES: List[JokeWebsiteBase] = [
     AnekdotyRu(),
     NewanekiRu(),
     AnekdotovNet(),
-    NekdoRu()
+    NekdoRu(),
+    AnekdotovmirRu()
 ]
 
 

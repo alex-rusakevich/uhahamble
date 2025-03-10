@@ -1,6 +1,9 @@
 Uhahamble Bot
 ===
 
+![Python version](https://badgen.net/badge/python/v3.12/blue)
+![Python version](https://badgen.net/badge/redis/v7/red)
+
 Бот с русскими анекдотами, собирающий лучшее с Рунета
 
 ## Разработчику
@@ -15,8 +18,12 @@ Uhahamble Bot
 
 Установка зависимостей:
 
-```poetry install```
+```sh
+poetry install
+```
 
 Запуск:
 
-```inv dev```
+```sh
+poetry run inv dev
+```

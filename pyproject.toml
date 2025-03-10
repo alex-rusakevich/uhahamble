@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "uhahamble"
-version = "1.0.0"
+version = "1.1.0"
 description = "Бот с отборными (или не очень) русскими анекдотами"
 authors = ["Alexander Rusakevich <mr.alexander.rusakevich@gmail.com>"]
 license = "GPLv3"

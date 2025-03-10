@@ -4,6 +4,7 @@ from telebot.types import Message
 
 from uhahamble.joke import JOKE_WEBSITES, get_joke, get_joke_list
 from uhahamble.utils.tg import get_command_args
+from uhahamble import __version__
 
 from .bot_instance import bot_instance as bot
 
@@ -30,6 +31,7 @@ def send_help(message: Message):
 не стесняйтесь их посетить! :D
 
 Автор бота — @alerus\\_by
+Версия бота — {__version__}
 
 """.strip(),
         parse_mode="MARKDOWN",

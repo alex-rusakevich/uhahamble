@@ -36,6 +36,9 @@ def get_joke_list() -> List[str]:
     for result in executor.map(
         lambda joke_website: joke_website.get_jokes(), JOKE_WEBSITES
     ):
+        if not result:
+            continue
+
         jokes.append(result)
 
     jokes = list(chain(*jokes))
